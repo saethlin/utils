@@ -34,7 +34,7 @@ impl<'a, T> IntoIterator for InOutBuf<'a, T> {
 
 impl<'a, T> InOutBuf<'a, T> {
     /// Create `InOutBuf` from a single mutable reference.
-    pub fn from_mut(val: &mut T) -> Self {
+    pub fn from_mut(val: &'a mut T) -> Self {
         Self {
             in_ptr: val as *mut T as *const T,
             out_ptr: val as *mut T,
