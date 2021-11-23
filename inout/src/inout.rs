@@ -1,6 +1,6 @@
+use crate::{InOutBuf, InTmpOut};
 use core::{marker::PhantomData, ptr};
 use generic_array::{ArrayLength, GenericArray};
-use crate::{InTmpOut, InOutBuf};
 
 /// Custom pointer type which contains one immutable (input) and one mutable
 /// (output) pointer, which are either equal or non-overlapping.

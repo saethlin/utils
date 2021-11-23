@@ -1,6 +1,6 @@
+use crate::InOutBuf;
 use core::{marker::PhantomData, ptr, slice};
 use generic_array::{ArrayLength, GenericArray};
-use crate::InOutBuf;
 
 /// Custom slice type which references one immutable (input) slice and two
 /// mutable (temporary and output) slices of equal length. Input and output

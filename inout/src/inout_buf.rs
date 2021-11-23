@@ -1,6 +1,6 @@
+use crate::{InOut, InTmpOutBuf};
 use core::{convert::TryInto, marker::PhantomData, slice};
 use generic_array::{ArrayLength, GenericArray};
-use crate::{InOut, InTmpOutBuf};
 
 /// Custom slice type which references one immutable (input) slice and one
 /// mutable (output) slice of equal length. Input and output slices are

@@ -11,11 +11,11 @@
 #![warn(missing_docs, rust_2018_idioms)]
 
 mod inout;
-mod intmpout;
 mod inout_buf;
+mod intmpout;
 mod intmpout_buf;
 
 pub use crate::inout::InOut;
-pub use intmpout::InTmpOut;
 pub use inout_buf::{InOutBuf, InOutBufIter, InSrc, IntoArrayError, NotEqualError};
+pub use intmpout::InTmpOut;
 pub use intmpout_buf::InTmpOutBuf;

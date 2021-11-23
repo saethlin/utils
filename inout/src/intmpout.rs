@@ -1,6 +1,6 @@
-use core::{marker::PhantomData};
-use generic_array::{ArrayLength, GenericArray};
 use crate::{InOut, InTmpOutBuf};
+use core::marker::PhantomData;
+use generic_array::{ArrayLength, GenericArray};
 
 /// Custom pointer type which contains one immutable (input) and two mutable
 /// (temporary and output) pointers.
