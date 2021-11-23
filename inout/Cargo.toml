@@ -1,0 +1,16 @@
+[package]
+name = "inout"
+version = "0.1.0" # Also update html_root_url in lib.rs when bumping this
+authors = ["RustCrypto Developers"]
+license = "MIT OR Apache-2.0"
+description = """
+    Custom reference types for code generic over in-place and
+    buffer-to-buffer modes of operation.
+"""
+documentation = "https://docs.rs/inout"
+repository = "https://github.com/RustCrypto/utils"
+keywords = ["custom-reference"]
+edition = "2018"
+
+[dependencies]
+generic-array = "0.14"
