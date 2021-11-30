@@ -80,9 +80,10 @@ impl<'a, T> InOut<'a, T> {
 
 impl<'a, T> From<&'a mut T> for InOut<'a, T> {
     fn from(val: &'a mut T) -> Self {
+        let out_ptr = val as *mut T;
         Self {
-            in_ptr: val as *mut T as *const T,
-            out_ptr: val as *mut T,
+            in_ptr: out_ptr as *const T,
+            out_ptr,
             _pd: PhantomData,
         }
     }
