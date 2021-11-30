@@ -105,7 +105,7 @@ impl<'a, T, N: ArrayLength<T>> InOut<'a, GenericArray<T, N>> {
     /// # Panics
     /// If `pos` greater or equal to array length.
     pub fn get<'b>(&'b mut self, pos: usize) -> InOut<'b, T> {
-        assert!(pos <= N::USIZE);
+        assert!(pos < N::USIZE);
         unsafe {
             InOut {
                 in_ptr: (self.in_ptr as *const T).add(pos),
