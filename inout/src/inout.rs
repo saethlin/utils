@@ -67,6 +67,16 @@ impl<'a, T> InOut<'a, T> {
     }
 }
 
+impl<'a, T: Clone> InOut<'a, T> {
+    /// Clone input value and return it.
+    #[inline(always)]
+    pub fn clone_in(&self) -> T {
+        unsafe {
+            (&*self.in_ptr).clone()
+        }
+    }
+}
+
 impl<'a, T> From<&'a mut T> for InOut<'a, T> {
     #[inline(always)]
     fn from(val: &'a mut T) -> Self {
