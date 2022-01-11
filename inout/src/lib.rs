@@ -13,5 +13,7 @@
 mod inout;
 mod inout_buf;
 
-pub use crate::inout::InOut;
-pub use inout_buf::{InOutBuf, InOutBufIter, IntoArrayError, NotEqualError};
+pub use crate::{
+    inout::InOut,
+    inout_buf::{InOutBuf, InOutBufIter, IntoArrayError, NotEqualError},
+};

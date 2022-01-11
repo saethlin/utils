@@ -23,13 +23,13 @@ impl<'a, T> InOut<'a, T> {
 
     /// Get immutable reference to the input value.
     #[inline(always)]
-    pub fn get_in(self) -> &'a T {
+    pub fn get_in<'b>(&'b self) -> &'b T {
         unsafe { &*self.in_ptr }
     }
 
     /// Get mutable reference to the output value.
     #[inline(always)]
-    pub fn get_out(self) -> &'a mut T {
+    pub fn get_out<'b>(&'b mut self) -> &'b mut T {
         unsafe { &mut *self.out_ptr }
     }
 
@@ -71,9 +71,7 @@ impl<'a, T: Clone> InOut<'a, T> {
     /// Clone input value and return it.
     #[inline(always)]
     pub fn clone_in(&self) -> T {
-        unsafe {
-            (&*self.in_ptr).clone()
-        }
+        unsafe { (&*self.in_ptr).clone() }
     }
 }
 

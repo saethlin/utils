@@ -105,13 +105,13 @@ impl<'a, T> InOutBuf<'a, T> {
 
     /// Get input slice.
     #[inline(always)]
-    pub fn get_in(self) -> &'a [T] {
+    pub fn get_in<'b>(&'b self) -> &'b [T] {
         unsafe { slice::from_raw_parts(self.in_ptr, self.len) }
     }
 
     /// Get output slice.
     #[inline(always)]
-    pub fn get_out(self) -> &'a mut [T] {
+    pub fn get_out<'b>(&'b mut self) -> &'b mut [T] {
         unsafe { slice::from_raw_parts_mut(self.out_ptr, self.len) }
     }
 
